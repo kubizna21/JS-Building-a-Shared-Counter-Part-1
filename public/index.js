@@ -1,9 +1,13 @@
-function main(){
+async function main(){
     const countContainer = document.querySelector('#count-container');
     const incrementButton = document.querySelector('#increment-button');
     const decrementButton = document.querySelector('#decrement-button');
 
-    let countValue = 0;
+   const response = await fetch('192.168.0.91');
+
+   const result = await response.json();
+
+    let countValue = result.countValue;
 
     function increment(){
         countValue++;
